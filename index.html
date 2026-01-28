@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #0b0f6b;
+  padding: 16px;
+}
+
+/* input + button */
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#photo_name {
+  flex: 1;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+}
+
+button {
+  padding: 14px 18px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: none;
+  background: #ff6a00;
+  color: white;
+  cursor: pointer;
+}
+
+/* photos grid */
+#photos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+#photos img {
+  width: 100%;
+  border-radius: 22px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
+
+/* 📲 TABLET */
+@media (min-width: 600px) {
+  #photos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 💻 LAPTOP */
+@media (min-width: 1024px) {
+  body {
+    padding: 40px;
+  }
+
+  #photos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+    </style>
+</head>
+<body>
+    
+     <div class="controls">
+  <input id="photo_name" placeholder="Search photo..." />
+  <button onclick="getPhotos()">Найти</button>
+</div>
+
+<div id="photos"></div>
+    <script src="./script.js"></script>
+</body>
+</html>
